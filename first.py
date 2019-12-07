@@ -74,9 +74,10 @@
 # print(h1.__dict__)    # Удобно использовать для просмотра того, что внутри класса.
 
 class Human:
-    def __init__(self, age, skill):
+    def __init__(self, age, skill, productivity):
         self.age = age
         self.skill = skill
+        self.productivity = productivity
 
     def __sub__(self, other):
         return self.age - other.age
@@ -84,9 +85,14 @@ class Human:
     def __add__(self, other):
         return self.skill + ", " + other.skill
 
+    def __mul__(self, other):
+        return (self.productivity + other.productivity) / 2
 
-young = Human(25, "Testing")
-old = Human(50, "Programming")
+
+young = Human(25, "Testing", 0.8)
+old = Human(50, "Programming", 0.9)
 year_difference = old - young
 average_team_skills = old + young
+average_productivity = old * young
 print(f"Year difference: {year_difference};", f"Average team skills: {average_team_skills}.")
+print(f"Average team productivity: {int(average_productivity * 100)}%")
