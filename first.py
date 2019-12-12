@@ -97,3 +97,4 @@ average_productivity = old * young
 print(f"Year difference: {year_difference};", f"Average team skills: {average_team_skills}.")
 print(f"Average team productivity: {int(average_productivity * 100)}%")
 print(f"Average team skills: {average_team_skills}.", f"Average team productivity: {int(average_productivity * 100)}%")
+
